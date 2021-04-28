@@ -1,0 +1,7 @@
+**/*
+files: [
+  "package.json", 
+  "dist",
+  "LICENSE",
+  "README.md"
+]
