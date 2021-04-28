@@ -7,6 +7,11 @@ const isEnvDevelopment = NODE_ENV === 'development'
 const isEnvProduction = NODE_ENV === 'production'
 
 module.exports = {
+  devServer: {
+    port: 3000
+  },
+  mode: isEnvProduction ? 'production' : 'development',
+  devtool: false,
   entry:  path.resolve(__dirname, 'src/index.ts'),
   output: {
     publicPath: '.',
@@ -14,21 +19,27 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'umd'
   },
-  mode: isEnvProduction ? 'production' : 'development',
   resolve: {
     extensions: ['.ts', '.js', '.json'],
     mainFiles: ['index'],
+  },
+  optimization: {
+    minimize: isEnvProduction,
+    splitChunks: false
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'ts-loader'
+        loader: 'babel-loader',
+        options: {
+          configFile: true
+        }
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ]
 }
