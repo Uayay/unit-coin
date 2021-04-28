@@ -8,7 +8,11 @@ function unitCoin(param: any): string {
     throw new Error('The param type must be a number.')
   }
 
-  let transVal = ''
+  let transVal = String(param)
+
+  if (origVal <= 1) {
+    return transVal
+  }
 
   for (let i = 0; i < UNITS.length; i++) {
     const unit = UNITS[i]
@@ -22,8 +26,6 @@ function unitCoin(param: any): string {
       return transVal
     }
   }
-
-  return transVal
 }
 
 export { unitCoin }

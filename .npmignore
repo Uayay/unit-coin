@@ -2,6 +2,7 @@
 files: [
   "package.json", 
   "dist",
+  "types",
   "LICENSE",
   "README.md"
 ]
