@@ -1,4 +1,5 @@
 import { UNITS } from "./constants"
+import * as _ from 'lodash-es'
 
 function unitCoin(param: any): string {
   const origVal = Number(param)
@@ -17,7 +18,7 @@ function unitCoin(param: any): string {
       (i === UNITS.length - 1) ||
       (origVal >= norms && norms < norms * 10 ** 3)
     ) {
-      transVal = `${(origVal / norms).toFixed(1)}${unit}`
+      transVal = `${_.floor(origVal / norms, 1)}${unit}`
       return transVal
     }
   }

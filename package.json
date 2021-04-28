@@ -9,8 +9,11 @@
     "test": "jest",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.4",
     "@babel/core": "^7.13.16",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.15",
@@ -28,5 +31,9 @@
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Uayay/unit-coin"
   }
 }
