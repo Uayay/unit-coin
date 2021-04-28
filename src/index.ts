@@ -26,6 +26,8 @@ function unitCoin(param: any): string {
       return transVal
     }
   }
+
+  return transVal
 }
 
 export { unitCoin }
