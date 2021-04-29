@@ -1,7 +1,7 @@
 import { UNITS } from "./constants"
 import * as _ from 'lodash-es'
 
-function unitCoin(param: any): string {
+function unitCoin(param: string | number): string {
   const origVal = Number(param)
 
   if (!Number.isNaN(origVal)) {
