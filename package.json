@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "description": "Unitize the game gold coins.",
   "main": "./dist/index.js",
+  "type": "module",
   "typings": "./types/index.d.ts",
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.cjs"
   },
   "dependencies": {
     "lodash-es": "^4.17.21"
