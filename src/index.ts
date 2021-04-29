@@ -20,7 +20,7 @@ function unitCoin(param: string | number): string {
 
     if (
       (i === UNITS.length - 1) ||
-      (origVal >= norms && norms < norms * 10 ** 3)
+      (origVal >= norms && origVal < norms * 10 ** 3)
     ) {
       transVal = `${_.floor(origVal / norms, 1)}${unit}`
       return transVal

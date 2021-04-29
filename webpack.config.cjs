@@ -11,7 +11,7 @@ module.exports = {
   entry:  path.resolve(__dirname, 'src/index.ts'),
   output: {
     publicPath: '.',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
     libraryTarget: 'umd'
   },
