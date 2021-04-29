@@ -4,11 +4,11 @@ import * as _ from 'lodash-es'
 function unitCoin(param: string | number): string {
   const origVal = Number(param)
 
-  if (!Number.isNaN(origVal)) {
+  if (Number.isNaN(origVal)) {
     throw new Error('The param type must be a number.')
   }
 
-  let transVal = String(param)
+  let transVal = String(origVal)
 
   if (origVal <= 1) {
     return transVal
