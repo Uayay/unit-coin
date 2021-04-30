@@ -7,11 +7,10 @@ const isEnvProduction = NODE_ENV === 'production'
 
 module.exports = {
   mode: isEnvProduction ? 'production' : 'development',
-  devtool: false,
   entry:  path.resolve(__dirname, 'src/index.ts'),
   output: {
     publicPath: '.',
-    path: path.resolve(__dirname, 'lib'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     libraryTarget: 'umd'
   },
@@ -36,6 +35,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin()
-  ]
+    isEnvProduction && new CleanWebpackPlugin()
+  ].filter(Boolean)
 }
