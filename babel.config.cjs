@@ -6,7 +6,7 @@ module.exports = {
         "targets": {
           "esmodules": true,
         },
-        "modules": false,
+        // "modules": false,
       }
     ],
     "@babel/preset-typescript"
