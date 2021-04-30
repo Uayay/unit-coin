@@ -4,6 +4,9 @@ test('NaN', () => {
   expect(() => {
     unitCoin.unit('NaN')
   }).toThrow('The param type must be a number.')
+  expect(() => {
+    unitCoin.unit(Number.NaN)
+  }).toThrow('The param type must be a number.')
 })
 
 test('0.1 to 0.1', () => {
@@ -29,4 +32,9 @@ test('1024 to 1.02k', () => {
 test('1024000 to 1.02m', () => {
   expect(unitCoin.unit(1024000))
     .toBe('1.02m')
+})
+
+test('1024000000 to 1.02b', () => {
+  expect(unitCoin.unit(1024000000))
+    .toBe('1.02b')
 })
