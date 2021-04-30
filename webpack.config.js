@@ -1,5 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 
 const NODE_ENV = process.env.NODE_ENV
 const isEnvDevelopment = NODE_ENV === 'development'
@@ -13,6 +15,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     libraryTarget: 'umd'
+  },
+  devServer: {
+    port: 3000,
+    publicPath: '.',
+    contentBase: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -35,6 +42,16 @@ module.exports = {
     ]
   },
   plugins: [
-    isEnvProduction && new CleanWebpackPlugin()
+    isEnvProduction 
+      && new CleanWebpackPlugin(),
+
+    isEnvDevelopment &&
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: path.resolve(__dirname, 'demo/index.html'),
+        inject: true,
+        // favicon: path.resolve(__dirname, 'demo/favicon.ico'),
+        minify: false
+      })
   ].filter(Boolean)
 }
