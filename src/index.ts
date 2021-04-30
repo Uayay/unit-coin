@@ -1,7 +1,7 @@
 import { UNITS } from "./constants"
 import * as _ from 'lodash-es'
 
-function unitCoin(param: string | number): string {
+function unit(param: string | number): string {
   const origVal = Number(param)
 
   if (Number.isNaN(origVal)) {
@@ -22,7 +22,7 @@ function unitCoin(param: string | number): string {
       (i === UNITS.length - 1) ||
       (origVal >= norms && origVal < norms * 10 ** 3)
     ) {
-      transVal = `${_.floor(origVal / norms, 1)}${unit}`
+      transVal = `${_.floor(origVal / norms, 2)}${unit}`
       return transVal
     }
   }
@@ -30,4 +30,6 @@ function unitCoin(param: string | number): string {
   return transVal
 }
 
-export { unitCoin }
+export default {
+  unit
+}
