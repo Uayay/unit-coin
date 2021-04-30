@@ -30,6 +30,4 @@ import * as _ from 'lodash-es'
   return transVal
 }
 
-export default {
-  unit: unitCoin
-}
+export { unitCoin }
