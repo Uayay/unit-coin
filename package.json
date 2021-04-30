@@ -51,5 +51,8 @@
     "LICENSE",
     "README.md",
     "package.json"
+  ],
+  "keywords": [
+    "unit-coin"
   ]
 }
