@@ -1,15 +1,15 @@
 module.exports = {
   sourceType: 'unambiguous',
   presets: [
-    ["@babel/preset-env", 
-      { 
+    ["@babel/preset-env",
+      {
         "targets": {
           "esmodules": true,
-        }, 
-        "modules": false
+        },
+        "modules": false,
       }
     ],
     "@babel/preset-typescript"
   ],
-  plugins: []
+  // plugins: ["external-helpers"]
 }
