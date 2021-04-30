@@ -1,8 +1,8 @@
 {
   "name": "unit-coin",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Unitize the game gold coins.",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "types": "types/index.d.ts",
   "license": "MIT",
   "scripts": {
