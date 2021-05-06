@@ -6,14 +6,14 @@ module.exports = {
   entry:  path.resolve(__dirname, 'demo/main.ts'),
   output: {
     publicPath: '.',
-    path: path.resolve(__dirname, 'demo'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     libraryTarget: 'umd'
   },
   devServer: {
     port: 3000,
-    publicPath: '.',
-    contentBase: path.resolve(__dirname, 'demo')
+    publicPath: '/',
+    contentBase: 'dist'
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -39,9 +39,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'demo/index.html'),
-      inject: true,
       favicon: path.resolve(__dirname, 'demo/favicon.ico'),
+      inject: true,
       minify: false
     })
-  ].filter(Boolean)
+  ]
 }
