@@ -9,8 +9,7 @@ export default {
   output: [
     {
       file: 'dist/index.js',
-      format: 'es',
-      minify: false
+      format: 'es'
     }
   ],
   plugins: [

@@ -512,6 +512,9 @@ function unitCoin(param) {
     if (Number.isNaN(origVal)) {
         throw new Error('The param type must be a number.');
     }
+    if (!Number.isFinite(origVal)) {
+        throw new Error('The param cannot be infinite.');
+    }
     let transVal = String(origVal);
     if (origVal <= 1) {
         return transVal;
