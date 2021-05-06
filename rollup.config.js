@@ -28,6 +28,8 @@ export default {
         ],
         '@babel/preset-typescript'
       ],
+      babelrc: false,
+      configFile: false
     }),
     typescript({
       tsconfig: 'tsconfig.json'

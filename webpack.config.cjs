@@ -36,7 +36,7 @@ module.exports = {
             ],
           ],
           babelrc: false,
-          configFile: false,
+          configFile: false
         }
       },
 

@@ -12,6 +12,13 @@ module.exports = {
 
   testEnvironment: "node",
 
+  transform: {"\\.[jt]sx?$": ["babel-jest", {
+    presets: [
+      '@babel/preset-env',
+      '@babel/preset-typescript'
+    ]
+  }]},
+
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)",
     // "**/?(*.)+(spec|test).[tj]s?(x)"
