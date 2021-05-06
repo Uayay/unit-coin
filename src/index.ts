@@ -8,6 +8,10 @@ import * as _ from 'lodash-es'
     throw new Error('The param type must be a number.')
   }
 
+  if (!Number.isFinite(origVal)) {
+    throw new Error('The param cannot be infinite.')
+  }
+
   let transVal = String(origVal)
 
   if (origVal <= 1) {
