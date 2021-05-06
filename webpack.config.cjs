@@ -6,14 +6,14 @@ module.exports = {
   entry:  path.resolve(__dirname, 'demo/main.ts'),
   output: {
     publicPath: '.',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'demo'),
     filename: 'index.js',
     libraryTarget: 'umd'
   },
   devServer: {
     port: 3000,
     publicPath: '/',
-    contentBase: 'dist'
+    contentBase: 'demo'
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
