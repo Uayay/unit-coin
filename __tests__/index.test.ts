@@ -9,6 +9,12 @@ test('NaN', () => {
   }).toThrow('The param type must be a number.')
 })
 
+test('Infinity', () => {
+  expect(() => {
+    unitCoin(10 ** 1000)
+  }).toThrow('The param cannot be infinite.')
+})
+
 test('0.1', () => {
   expect(unitCoin(0.1))
     .toBe('0.1')
