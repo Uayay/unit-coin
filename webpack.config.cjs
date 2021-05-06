@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry:  path.resolve(__dirname, 'demo/main.ts'),
+  entry:  path.resolve(__dirname, 'demo/main.tsx'),
   output: {
     publicPath: '.',
     path: path.resolve(__dirname, 'demo'),
@@ -16,7 +16,7 @@ module.exports = {
     contentBase: 'demo'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json'],
+    extensions: ['.ts', '.js', '.json', '.tsx'],
     mainFiles: ['index'],
   },
   optimization: {
@@ -26,12 +26,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        loader: require.resolve('babel-loader'),
         options: {
-          configFile: true
+          customize: require.resolve('babel-preset-react-app/webpack-overrides'),
+          presets: [
+            [
+              require.resolve('babel-preset-react-app')
+            ],
+          ],
+          babelrc: false,
+          configFile: false,
         }
+      },
+
+      {
+        test:  /\.css$/,
+        use: [
+          { loader: require.resolve('style-loader') },
+          { loader: require.resolve('css-loader') }
+        ]
       }
     ]
   },
